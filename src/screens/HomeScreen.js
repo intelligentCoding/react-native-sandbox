@@ -42,6 +42,12 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("ColorGenerator")}
         />
       </View>
+      <View style={styles.buttons}>
+        <Button
+          title='Color Generator with Reducer'
+          onPress={() => navigation.navigate("ColorGeneratorWithReducer")}
+        />
+      </View>
     </View>
   );
 };
