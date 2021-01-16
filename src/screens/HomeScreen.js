@@ -1,9 +1,9 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, Button, ScrollView } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View>
+    <ScrollView>
       <Text style={styles.text}>Hello this is home screen</Text>
       <View style={styles.buttons}>
         <Button
@@ -32,6 +32,12 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <View style={styles.buttons}>
         <Button
+          title='Counter Screen with Reducer'
+          onPress={() => navigation.navigate("CounterScreenWithReducer")}
+        />
+      </View>
+      <View style={styles.buttons}>
+        <Button
           title='Color Screen'
           onPress={() => navigation.navigate("ColorScreen")}
         />
@@ -47,8 +53,15 @@ const HomeScreen = ({ navigation }) => {
           title='Color Generator with Reducer'
           onPress={() => navigation.navigate("ColorGeneratorWithReducer")}
         />
-      </View>
-    </View>
+        </View>
+      <View style={styles.buttons}>
+        <Button
+          title='Text Screen'
+          onPress={() => navigation.navigate("TextScreen")}
+        />
+        </View>
+
+    </ScrollView>
   );
 };
 

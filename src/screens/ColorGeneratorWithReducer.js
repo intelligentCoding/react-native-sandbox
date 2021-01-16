@@ -3,17 +3,17 @@ import { Button, StyleSheet, View, Text, ActionSheetIOS } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 const reducer = (state, action)=>{
     switch(action.type){
-        case 'red':
+        case 'change_red':
             return state.red + action.payload > 255 ||
               state.red + action.payload < 0
               ? state
               : { ...state, red: state.red + action.payload };
-        case 'green':
+        case 'change_green':
             return state.red + action.payload > 255 ||
               state.red + action.payload < 0
               ? state
               : { ...state, green: state.green + action.payload };
-        case 'blue':
+        case 'change_blue':
             return state.red + action.payload > 255 ||
             state.red + action.payload < 0
             ? state
@@ -30,28 +30,28 @@ const ColorGenerator = () => {
     <View>
       <ColorCounter
         onIncrease={() => {
-          dispatch({type: "red", payload: COLOR_INCREMENT})
+          dispatch({type: "change_red", payload: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-            dispatch({type: "red", payload: -1 * COLOR_INCREMENT})
+            dispatch({type: "change_red", payload: -1 * COLOR_INCREMENT})
         }}
         color='Red'
       />
       <ColorCounter
         onIncrease={() => {
-            dispatch({type: "blue", payload: COLOR_INCREMENT})
+            dispatch({type: "change_blue", payload: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-            dispatch({type: "blue", payload: -1 * COLOR_INCREMENT})
+            dispatch({type: "change_blue", payload: -1 * COLOR_INCREMENT})
         }}
         color='Blue'
       />
       <ColorCounter
         onIncrease={() => {
-            dispatch({type: "green", payload: COLOR_INCREMENT})
+            dispatch({type: "change_green", payload: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-            dispatch({type: "green", payload: -1 * COLOR_INCREMENT})
+            dispatch({type: "change_green", payload: -1 * COLOR_INCREMENT})
         }}
         color='Green'
       />
