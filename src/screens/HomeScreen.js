@@ -60,6 +60,12 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("TextScreen")}
         />
         </View>
+      <View style={styles.buttons}>
+        <Button
+          title='Box Screen'
+          onPress={() => navigation.navigate("BoxScreen")}
+        />
+        </View>
 
     </ScrollView>
   );
